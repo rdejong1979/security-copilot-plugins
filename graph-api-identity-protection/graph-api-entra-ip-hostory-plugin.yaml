@@ -1,0 +1,11 @@
+Descriptor:   
+  Name: Entra Identity Protection history - Graph API Plugin  
+  DisplayName: Entra Identity Protection history - Graph API Plugin   
+  Description: Retrieves Entra Identity Protection information including history from Microsoft Graph API with the current user permissions.   
+  Authorization:   
+    Type: AADDelegated   
+    EntraScopes: https://graph.microsoft.com/.default   
+SkillGroups:   
+  - Format: API   
+    Settings:   
+      OpenApiSpecUrl: https://raw.githubusercontent.com/rdejong1979/security-copilot-plugins/refs/heads/main/graph-api-identity-protection/graph-api-entra-ip-history-spec.yaml
