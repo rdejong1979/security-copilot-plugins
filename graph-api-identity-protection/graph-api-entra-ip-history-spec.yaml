@@ -1,4 +1,3 @@
-~~~yaml
 openapi: 3.0.1
 info:
   title: Microsoft Graph API - Risky User History Item
