@@ -38,7 +38,7 @@ paths:
                   
     /identityProtection/riskyUsers/{riskyUserId}/history:
         get: 
-            operationId: history
+            operationId: riskyUsers/{riskyUserId}/history
             summary: Get a list of the riskDetection objects and their properties. 
             responses:
                 200:
