@@ -1,6 +1,6 @@
 Descriptor:   
   Name: Entra Identity Protection - Graph API Plugin  
-  DisplayName: Entra Identity Protection  - Graph API Plugin   
+  DisplayName: Entra Identity Protection - Graph API Plugin   
   Description: Retrieves Entra Identity Protection information including history from Microsoft Graph API with the current user permissions.   
   Authorization:   
     Type: AADDelegated   
