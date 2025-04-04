@@ -6,7 +6,7 @@ info:
 servers:
     - url: https://graph.microsoft.com/v1.0
 paths:
-    /identity/identityProtection/riskyUsers:
+    /identityProtection/riskyUsers:
         get: 
             operationId: riskyUsers
             summary: Get a list of the riskyUser objects and their properties. 
