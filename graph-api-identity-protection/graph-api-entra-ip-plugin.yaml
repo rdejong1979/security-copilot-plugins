@@ -1,0 +1,11 @@
+Descriptor:   
+  Name: Entra Identity Protection - Graph API Plugin  
+  DisplayName: Entra Identity Protection  - Graph API Plugin   
+  Description: Retrieves information from Microsoft Graph API with the current user permissions.   
+  Authorization:   
+    Type: AADDelegated   
+    EntraScopes: https://graph.microsoft.com/.default   
+SkillGroups:   
+  - Format: API   
+    Settings:   
+      OpenApiSpecUrl: https://raw.githubusercontent.com/rdejong1979/copilot-for-security-plugins/refs/heads/main/graph-api-conditionalaccess-demo/graph-api-ca-spec.yaml
