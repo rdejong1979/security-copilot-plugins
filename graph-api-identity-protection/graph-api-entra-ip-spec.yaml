@@ -15,3 +15,33 @@ paths:
                   description: Successful retrieval. 
                 401:
                   description: Unsuccessful authentication.
+                  
+    /identityProtection/riskDetections:
+        get: 
+            operationId: riskDetections
+            summary: Get a list of the riskDetection objects and their properties. 
+            responses:
+                200:
+                  description: Successful retrieval. 
+                401:
+                  description: Unsuccessful authentication.
+                  
+    /identityProtection/riskyUserHistoryItem:
+        get: 
+            operationId: riskyUserHistoryItem
+            summary: Get a list of the riskDetection objects and their properties. 
+            responses:
+                200:
+                  description: Successful retrieval. 
+                401:
+                  description: Unsuccessful authentication.
+                  
+    /identityProtection/riskyUsers/{riskyUserId}/history:
+        get: 
+            operationId: history
+            summary: Get a list of the riskDetection objects and their properties. 
+            responses:
+                200:
+                  description: Successful retrieval. 
+                401:
+                  description: Unsuccessful authentication.
