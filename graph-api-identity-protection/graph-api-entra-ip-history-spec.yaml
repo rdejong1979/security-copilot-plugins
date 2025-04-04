@@ -4,6 +4,24 @@ info:
   description: API for accessing the risk history of a Microsoft Entra user as determined by Microsoft Entra ID Protection.
   version: 1.0.0
 paths:
+    /identityProtection/riskyUsers:
+        get: 
+            operationId: riskyUsers
+            summary: Get a list of the riskyUser objects and their properties. 
+            responses:
+                200:
+                  description: Successful retrieval. 
+                401:
+                  description: Unsuccessful authentication.                
+    /identityProtection/riskDetections:
+        get: 
+            operationId: riskDetections
+            summary: Get a list of the riskDetection objects and their properties. 
+            responses:
+                200:
+                  description: Successful retrieval. 
+                401:
+                  description: Unsuccessful authentication.
   /identityProtection/riskyUsers/{userId}/history:
     get:
       summary: Get the riskyUserHistoryItems from the history navigation property.
