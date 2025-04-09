@@ -1,105 +1,102 @@
-
 openapi: 3.0.0
 info:
-  title: Microsoft Graph API
-  version: 1.0.0
+  title: Microsoft Graph API
+  version: 1.0.0
 paths:
-  /identityGovernance/entitlementManagement/accessPackages:
-    get:
-      summary: List accessPackages
-      description: Retrieve a list of accessPackage objects.
-      operationId: listAccessPackages
-      parameters:
-      - name: $filter
-        in: query
-        description: Filter items by property values
-        required: false
-        schema:
-          type: string
-      - name: $orderby
-        in: query
-        description: Order items by property values
-        required: false
-        schema:
-          type: string
-      - name: $select
-        in: query
-        description: Select properties to be returned
-        required: false
-        schema:
-          type: string
-      - name: $expand
-        in: query
-        description: Expand related entities
-        required: false
-        schema:
-          type: string
-      - name: $top
-        in: query
-        description: Show only the first n items
-        required: false
-        schema:
-          type: integer
-      - name: $skip
-        in: query
-        description: Skip the first n items
-        required: false
-        schema:
-          type: integer
-      - name: $count
-        in: query
-        description: Include count of items
-        required: false
-        schema:
-          type: boolean
-      responses:
-        '200':
-          description: Successful retrieval of accessPackage objects
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/accessPackage'
-      security:
-      - oauth2:
-        - User.Read
+  /identityGovernance/entitlementManagement/accessPackages:
+    get:
+      summary: List accessPackages
+      description: Retrieve a list of accessPackage objects.
+      operationId: listAccessPackages
+      parameters:
+      - name: $filter
+        in: query
+        description: Filter items by property values
+        required: false
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        description: Order items by property values
+        required: false
+        schema:
+          type: string
+      - name: $select
+        in: query
+        description: Select properties to be returned
+        required: false
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        description: Expand related entities
+        required: false
+        schema:
+          type: string
+      - name: $top
+        in: query
+        description: Show only the first n items
+        required: false
+        schema:
+          type: integer
+      - name: $skip
+        in: query
+        description: Skip the first n items
+        required: false
+        schema:
+          type: integer
+      - name: $count
+        in: query
+        description: Include count of items
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful retrieval of accessPackage objects
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/accessPackage'
+      security:
+      - oauth2:
+        - User.Read
 components:
-  schemas:
-    accessPackage:
-      type: object
-      properties:
-        id:
-          type: string
-        displayName:
-          type: string
-        description:
-          type: string
-        isHidden:
-          type: boolean
-        createdDateTime:
-          type: string
-          format: date-time
-        modifiedDateTime:
-          type: string
-          format: date-time
-        catalogId:
-          type: string
-        catalog:
-          $ref: '#/components/schemas/accessPackageCatalog'
-        assignmentPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/accessPackageAssignmentPolicy'
-  securitySchemes:
-    oauth2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
-          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
-          scopes:
-            User.Read: Read user profile information
+  schemas:
+    accessPackage:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        isHidden:
+          type: boolean
+        createdDateTime:
+          type: string
+          format: date-time
+        modifiedDateTime:
+          type: string
+          format: date-time
+        catalogId:
+          type: string
+        catalog:
+          type: string
+        assignmentPolicies:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            User.Read: Read user profile information
