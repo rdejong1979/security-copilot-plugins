@@ -54,12 +54,3 @@ paths:
       responses:
         '200':
           description: Successful retrieval of accessPackage objects
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/accessPackage'
