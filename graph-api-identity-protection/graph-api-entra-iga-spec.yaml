@@ -1,27 +1,105 @@
+
 openapi: 3.0.0
 info:
-    title: Microsoft Graph API Plugin to access data from Entra ID and Identity Protection information
-    description: Specification to retrieve information via MIcrosoft Graph API for Entra Identity Protection to be used in Security Copilot.
-    version: "1.0"
-servers:
-    - url: https://graph.microsoft.com/v1.0
+  title: Microsoft Graph API
+  version: 1.0.0
 paths:
-    /identityProtection/riskyUsers:
-        get: 
-            operationId: riskyUsers
-            summary: Get a list of the riskyUser objects and their properties. 
-            responses:
-                200:
-                  description: Successful retrieval. 
-                401:
-                  description: Unsuccessful authentication.
-                  
-    /identityProtection/riskDetections:
-        get: 
-            operationId: riskDetections
-            summary: Get a list of the riskDetection objects and their properties. 
-            responses:
-                200:
-                  description: Successful retrieval. 
-                401:
-                  description: Unsuccessful authentication.
+  /identityGovernance/entitlementManagement/accessPackages:
+    get:
+      summary: List accessPackages
+      description: Retrieve a list of accessPackage objects.
+      operationId: listAccessPackages
+      parameters:
+      - name: $filter
+        in: query
+        description: Filter items by property values
+        required: false
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        description: Order items by property values
+        required: false
+        schema:
+          type: string
+      - name: $select
+        in: query
+        description: Select properties to be returned
+        required: false
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        description: Expand related entities
+        required: false
+        schema:
+          type: string
+      - name: $top
+        in: query
+        description: Show only the first n items
+        required: false
+        schema:
+          type: integer
+      - name: $skip
+        in: query
+        description: Skip the first n items
+        required: false
+        schema:
+          type: integer
+      - name: $count
+        in: query
+        description: Include count of items
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful retrieval of accessPackage objects
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/accessPackage'
+      security:
+      - oauth2:
+        - User.Read
+components:
+  schemas:
+    accessPackage:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        isHidden:
+          type: boolean
+        createdDateTime:
+          type: string
+          format: date-time
+        modifiedDateTime:
+          type: string
+          format: date-time
+        catalogId:
+          type: string
+        catalog:
+          $ref: '#/components/schemas/accessPackageCatalog'
+        assignmentPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/accessPackageAssignmentPolicy'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            User.Read: Read user profile information
