@@ -1,7 +1,7 @@
 Descriptor:   
   Name: Entra Identity Governance - Graph API Plugin  
   DisplayName: Entra Identity Governance - Graph API Plugin   
-  Description: Retrieves Entra Identity Protection information including history from Microsoft Graph API with the current user permissions.   
+  Description: Retrieves Entra Identity Governance information via Microsoft Graph API with the current user permissions.   
   Authorization:   
     Type: AADDelegated   
     EntraScopes: https://graph.microsoft.com/.default   
