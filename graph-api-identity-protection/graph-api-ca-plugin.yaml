@@ -8,4 +8,4 @@ Descriptor:
 SkillGroups:   
   - Format: API   
     Settings:   
-      OpenApiSpecUrl: https://raw.githubusercontent.com/rdejong1979/copilot-for-security-plugins/refs/heads/main/graph-api-conditionalaccess-demo/graph-api-ca-spec.yaml
+      OpenApiSpecUrl: https://raw.githubusercontent.com/rdejong1979/security-copilot-plugins/refs/heads/main/graph-api-identity-protection/graph-api-ca-spec.yaml
