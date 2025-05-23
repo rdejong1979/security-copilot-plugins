@@ -90,3 +90,4 @@ components:
           description: The authentication method identifier.
         model:
           type: string
+          description: The manufacturer-assigned model of the FIDO2 security key.
