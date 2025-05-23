@@ -62,6 +62,3 @@ components:
           items:
             type: string
           description: The attestation certificate(s) attached to this security key.
-        attestationLevel:
-          type: string
-          description: The attestation level of this FIDO2 security key. Possible values are: `attested`, or `notAttested`.
