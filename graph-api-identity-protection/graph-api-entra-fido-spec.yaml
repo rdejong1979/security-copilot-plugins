@@ -59,6 +59,3 @@ components:
           description: The manufacturer-assigned model of the FIDO2 security key.
         attestationCertificates:
           type: array
-          items:
-          type: string
-          description: The attestation certificate(s) attached to this security key.
