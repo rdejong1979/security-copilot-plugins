@@ -75,19 +75,3 @@ components:
           items:
           type: string
           description: The attestation certificate(s) attached to this security key.
-        attestationLevel:
-          type: string
-        description: The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: The timestamp when this key was registered to the user.
-        displayName:
-          type: string
-          description: The display name of the key as given by the user.
-        id:
-          type: string
-          description: The authentication method identifier.
-        model:
-          type: string
-          description: The manufacturer-assigned model of the FIDO2 security key.
