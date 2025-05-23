@@ -60,5 +60,5 @@ components:
         attestationCertificates:
           type: array
           items:
-            type: string
+          type: string
           description: The attestation certificate(s) attached to this security key.
