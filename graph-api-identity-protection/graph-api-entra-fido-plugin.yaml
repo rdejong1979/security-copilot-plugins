@@ -1,1 +1,11 @@
-
+Descriptor:   
+  Name: FIDO2 Authentication Methods - Graph API Plugin  
+  DisplayName: FIDO2 Authentication Methods - Graph API Plugin   
+  Description: Retrieves information from Microsoft Graph API with the current user permissions.   
+  Authorization:   
+    Type: AADDelegated   
+    EntraScopes: https://graph.microsoft.com/.default   
+SkillGroups:   
+  - Format: API   
+    Settings:   
+      OpenApiSpecUrl: https://raw.githubusercontent.com/rdejong1979/security-copilot-plugins/refs/heads/main/graph-api-identity-protection/graph-api-ca-spec.yaml
